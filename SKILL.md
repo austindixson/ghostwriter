@@ -1,5 +1,5 @@
 ---
-name: novel-forge-complete
+name: ghostwriter
 description: Turn a single story idea into a complete, collaborative novel package using an adaptive outline->blueprint->draft->revision->audit pipeline with visual planning artifacts.
 version: 0.3.0
 author: Hermes Agent + Ghost
@@ -10,7 +10,7 @@ metadata:
     category: creative
 ---
 
-# Novel Forge Complete
+# Ghostwriter
 
 Use this skill when a user wants a full novel and a collaborative writing partner, not just a one-shot outline.
 
@@ -305,7 +305,7 @@ Examples:
 - “I have an idea for a fantasy romance; help me build it.”
 
 Preferred invocation (optional, for advanced users):
-“Run Novel Forge Complete on this project using canon lock, structure plan, chapter drafting, expansion, humanization, continuity audits, loose-end closure scans, and synchronized packaging.”
+“Run Ghostwriter on this project using canon lock, structure plan, chapter drafting, expansion, humanization, continuity audits, loose-end closure scans, and synchronized packaging.”
 
 Optional config block:
 ```yaml
@@ -323,4 +323,4 @@ terminal_snippets_strict: true
 ```
 
 ## Quick-start execution prompt
-“Use Novel Forge Complete. I’ll give a premise. Ask your intake questions, propose options for characters/events/relationships/symbolism/foreshadowing, and collaborate with me phase-by-phase. Keep outputs organized with tables/charts/slide-style summaries and support revision loops before final manuscript package.”
+“Use Ghostwriter. I’ll give a premise. Ask your intake questions, propose options for characters/events/relationships/symbolism/foreshadowing, and collaborate with me phase-by-phase. Keep outputs organized with tables/charts/slide-style summaries and support revision loops before final manuscript package.”
