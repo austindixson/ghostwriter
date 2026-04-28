@@ -14,6 +14,17 @@ metadata:
 
 Use this skill when a user wants a full novel and a collaborative writing partner, not just a one-shot outline.
 
+## Natural-language trigger (default)
+If the user says anything like:
+- “I want to write a novel about …”
+- “Help me write a book …”
+- “I have a story idea …”
+- “Can we build this into a full novel?”
+
+then immediately activate this skill in collaborative mode.
+Do NOT ask for special command syntax.
+Start by acknowledging the premise and asking the intake questions in a conversational way.
+
 Core contract:
 1) Ask focused intake questions first.
 2) Co-design story options with the user (characters/events/relationships/symbolism/foreshadowing).
@@ -287,7 +298,13 @@ ZERO
 ```
 
 ## Invocation + config interface
-Preferred invocation:
+Default user invocation should be natural language.
+Examples:
+- “I want to write a novel about a grief-stricken cartographer who maps dreams.”
+- “Help me write a sci-fi book about memory theft.”
+- “I have an idea for a fantasy romance; help me build it.”
+
+Preferred invocation (optional, for advanced users):
 “Run Novel Forge Complete on this project using canon lock, structure plan, chapter drafting, expansion, humanization, continuity audits, loose-end closure scans, and synchronized packaging.”
 
 Optional config block:
