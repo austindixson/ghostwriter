@@ -1,7 +1,7 @@
 ---
 name: novel-forge-complete
 description: Turn a single story idea into a complete, collaborative novel package using an adaptive outline->blueprint->draft->revision->audit pipeline with visual planning artifacts.
-version: 0.2.1
+version: 0.3.0
 author: Hermes Agent + Ghost
 license: MIT
 metadata:
@@ -90,6 +90,15 @@ For Epic/Series mode, enforce long-project mode:
 
 ## Phase workflow
 
+### Phase 0: Canon lock (required before drafting)
+Create/confirm canonical constraints:
+- name/alias map (formal/familiar/intimate forms)
+- pronoun map
+- world term map (org/model/protocol handles)
+- motif formatting rules
+- forbidden language/forms list (if any)
+- ending-state requirements
+
 ### Phase 1: Thesis lock
 Output:
 - premise
@@ -111,6 +120,7 @@ Produce:
 - chapter spine (purpose/conflict/turn/exit hook per chapter)
 - midpoint reversal, point-of-no-return, dark night, climax decision
 - event escalation ladder
+- ending dependency map
 
 ### Phase 4: Beat matrix + symbolism map
 For each chapter define beats with:
@@ -133,12 +143,33 @@ For each chapter create a drafting blueprint:
 ### Phase 6: Drafting loop
 For each chapter:
 1. Write `chapter-XX-draft-v1.md`
-2. Humanize prose only -> `chapter-XX-draft-v1-humanized.md`
+2. Enforce chapter-specific motifs and canon constraints
 3. Continuity check against previous/next chapter anchors
 4. Log decisions in continuity log
 5. Ask user for notes and apply revision if requested
 
-### Phase 7: Audit loop
+Reusable chapter micro-template:
+1) Inherited State (pressure arriving from prior chapter)
+2) Technical/World Movement (what mechanism changes)
+3) Human Cost (who pays now)
+4) Decision (irreversible choice/cost)
+5) Cohesion Hook (exact trigger passed to next chapter)
+
+### Phase 7: Expansion pass
+For each chapter, expand toward target length while preserving structure:
+- deepen operational realism and procedural stakes
+- pair technical movement with human consequence scenes
+- increase support-cast utility without cast sprawl
+- preserve handoff tension geometry
+
+### Phase 8: Humanization pass
+Humanize prose only (never planning docs):
+- vary sentence rhythm
+- replace template-like exposition with POV-native thought
+- keep technical clarity while sounding lived-in
+- reduce repetitive abstract phrasing
+
+### Phase 9: Audit loop
 Run and fix:
 - cohesion audit (outline vs manuscript alignment)
 - character arc closure audit
@@ -163,12 +194,12 @@ Loose-end protocol for final chapters:
   - merged into another resolved thread
 - No accidental dangling high-stakes thread at finalization
 
-### Phase 8: Finalization
-Generate:
-- full manuscript markdown
+### Phase 10: Compilation + packaging
+Rebuild synchronized outputs after every material chapter edit:
+- compiled manuscript markdown
 - reader edition markdown
-- revision log
-- optional EPUB-ready package notes
+- epub package
+- final QA report
 
 ## Visual/organized outputs (required)
 At each major phase, include at least one of these:
@@ -219,17 +250,20 @@ After each phase:
 - Planning/story-deck-slides.md
 - Planning/chapter-XX-scene-outline.md
 - Planning/chapter-XX-drafting-blueprint.md
-- Planning/continuity-log.md
-- Planning/continuity-scan-report.md
-- Planning/loose-ends-register.md
-- Planning/loose-ends-closure-report.md
-- Planning/cohesion-audit.md
-- Planning/character-arc-closure-audit.md
-- Planning/symbolism-coherence-audit.md
-- Planning/revision-log.md
-- Drafts/chapter-XX-draft-v1.md
-- Drafts/chapter-XX-draft-v1-humanized.md
-- Drafts/<title>-manuscript-v1.md
+- `Planning/continuity-log.md`
+- `Planning/continuity-scan-report.md`
+- `Planning/loose-ends-register.md`
+- `Planning/loose-ends-closure-report.md`
+- `Planning/cohesion-audit.md`
+- `Planning/character-arc-closure-audit.md`
+- `Planning/symbolism-coherence-audit.md`
+- `Planning/revision-log.md`
+- `Planning/final-qa-report.md`
+- `Drafts/chapter-XX-draft-v1.md`
+- `Drafts/chapter-XX-draft-v1-humanized.md`
+- `Drafts/<title>-manuscript-v1.md`
+- `Drafts/<title>-reader-v1.md`
+- `Drafts/<title>-v1.epub`
 
 ## Failure handling
 If quality gates fail:
@@ -237,6 +271,39 @@ If quality gates fail:
 2. Patch only affected artifacts
 3. Re-run relevant audits
 4. Only then regenerate final manuscript
+
+## Terminal/log snippet policy (important)
+Any terminal/log-style content in the novel must be:
+- visually separated as code block
+- syntactically plausible
+- clear about input vs output
+
+Example:
+```terminal
+$ wishes.pending
+0
+$ state
+ZERO
+```
+
+## Invocation + config interface
+Preferred invocation:
+“Run Novel Forge Complete on this project using canon lock, structure plan, chapter drafting, expansion, humanization, continuity audits, loose-end closure scans, and synchronized packaging.”
+
+Optional config block:
+```yaml
+title: <working title>
+size_tier: standard   # novella|standard|epic|series
+chapters: 16
+target_words_per_chapter: 5000
+humanize: true
+rebuild_outputs_each_pass: true
+output_formats:
+  - manuscript_md
+  - reader_md
+  - epub
+terminal_snippets_strict: true
+```
 
 ## Quick-start execution prompt
 “Use Novel Forge Complete. I’ll give a premise. Ask your intake questions, propose options for characters/events/relationships/symbolism/foreshadowing, and collaborate with me phase-by-phase. Keep outputs organized with tables/charts/slide-style summaries and support revision loops before final manuscript package.”
