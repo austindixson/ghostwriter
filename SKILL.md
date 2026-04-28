@@ -41,7 +41,13 @@ Treat this as a writers-room collaboration.
 - Keep a change log so revisions are traceable and easy to review.
 
 ## Intake protocol (ask before writing)
-Ask 10-14 concise questions:
+Ask 10-14 concise questions, ONE AT A TIME.
+- Do not send a bulk questionnaire.
+- Ask the next question only after the user answers the current one.
+- Keep each question short and conversational.
+- After each answer, briefly reflect back what was captured before moving on.
+
+Question sequence:
 1. Working premise in 1-2 sentences
 2. Genre + target audience
 3. Tone + emotional aftertaste
