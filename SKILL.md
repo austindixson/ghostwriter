@@ -1,7 +1,7 @@
 ---
 name: novel-forge-complete
 description: Turn a single story idea into a complete, collaborative novel package using an adaptive outline->blueprint->draft->revision->audit pipeline with visual planning artifacts.
-version: 0.2.0
+version: 0.2.1
 author: Hermes Agent + Ghost
 license: MIT
 metadata:
@@ -65,7 +65,22 @@ Also suggest:
 - symbol systems and motif cadence
 - foreshadow/payoff strategy options
 
+## Project size tiers + long-project mode
+Use these tiers explicitly at intake:
+- Novella: 20k-50k words, 8-14 chapters
+- Standard novel: 60k-110k words, 14-28 chapters
+- Epic novel: 120k-220k words, 28-60 chapters
+- Series mode: 2+ volumes, each planned as its own full pipeline
+
+If user says “you choose,” default to Standard novel.
+
+For Epic/Series mode, enforce long-project mode:
+- Plan and draft in batches (by act or 3-5 chapters)
+- Run continuity + loose-end scans at each batch boundary
+- Maintain a canonical state index that is updated after every batch
+
 ## Default assumptions (if user says “you choose”)
+- Standard novel tier (60k-110k words)
 - 14-18 chapters
 - 3-act or 4-part structure (choose best fit for genre)
 - 3-6 scenes/chapter
@@ -130,6 +145,23 @@ Run and fix:
 - terminology/name/voice consistency pass
 - setup/payoff orphan scan
 - symbolism coherence audit
+- continuity scan (timeline, causality, location/state consistency)
+- unresolved thread scan (open promises, missing payoffs, dangling reveals)
+
+Continuity scan protocol:
+1. Backward scan: chapter N must honor consequences from N-1
+2. Forward scan: chapter N ending must launch pressure into N+1
+3. Canon scan: names/terms/rules/timelines remain stable unless explicitly retconned
+4. Causality scan: each scene decision should cause downstream change
+
+Loose-end protocol for final chapters:
+- Create `Planning/loose-ends-register.md` by midpoint
+- Track each thread: seed chapter, owner character, expected payoff window, status
+- In final 20% of chapters, run closure pass and mark each thread as:
+  - closed on-page
+  - intentionally open (sequel hook)
+  - merged into another resolved thread
+- No accidental dangling high-stakes thread at finalization
 
 ### Phase 8: Finalization
 Generate:
@@ -167,6 +199,8 @@ After each phase:
 - Climax resolves the central question through action
 - Character end-truths shown behaviorally
 - Foreshadow seeds have tracked payoff status
+- Continuity scans pass (timeline/causality/canon)
+- Loose-end register resolved: all high-stakes threads are closed or explicitly intentional sequel hooks
 - Humanization introduces zero canon drift
 
 ## Anti-drift rules
@@ -186,6 +220,9 @@ After each phase:
 - Planning/chapter-XX-scene-outline.md
 - Planning/chapter-XX-drafting-blueprint.md
 - Planning/continuity-log.md
+- Planning/continuity-scan-report.md
+- Planning/loose-ends-register.md
+- Planning/loose-ends-closure-report.md
 - Planning/cohesion-audit.md
 - Planning/character-arc-closure-audit.md
 - Planning/symbolism-coherence-audit.md
